@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-//https://github.com/laszlosimity/Java-TestNG-SauceDemo-Selenium/blob/master/src/test/java/com/yourcompany/Pages/SauceDemoHomePage.java
 public class MainPage {
     public static String mainPageUrl = "https://www.saucedemo.com/";
 
@@ -34,8 +33,7 @@ public class MainPage {
     }
 
     public String getUserName() {
-        String theField = usernameField.getText();
-        return theField;
+        return usernameField.getText();
     }
 
     public void setUsername(String theUsername) {
