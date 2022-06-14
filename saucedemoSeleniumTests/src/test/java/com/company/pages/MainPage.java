@@ -46,9 +46,9 @@ public class MainPage {
         passwordField.sendKeys(thePassword);
     }
 
-    public void login(String theUsername, String thePassword) {
-        setUsername(theUsername);
-        setPassword(thePassword);
+    public void login(String username, String password) {
+        setUsername(username);
+        setPassword(password);
         submitButton.click();
     }
 

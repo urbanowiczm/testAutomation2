@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -14,6 +16,9 @@ public class Google1Test {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://google.com");
+
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("L2AGLb")));
 
         //accept terms
         WebElement acceptTermsButton = driver.findElement(By.id("L2AGLb"));
@@ -28,7 +33,7 @@ public class Google1Test {
         WebElement linkToSeleniumPage = driver.findElement(By.cssSelector("a[href='https://www.selenium.dev/']"));
         linkToSeleniumPage.click();
 
-        WebElement donateButton = driver.findElement(By.cssSelector("div[class='donate-selenium']"));
+        WebElement donateButton = driver.findElement(By.xpath("div[class='donate-selenium']"));
         assertTrue(donateButton.isDisplayed());
 
         driver.quit();
